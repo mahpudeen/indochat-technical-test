@@ -1,32 +1,48 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <q-layout view="lHh Lpr lFf">
+    <q-header class="header1">
+      <q-toolbar>
+        
+        <q-btn round>
+          <q-avatar size="30px">
+            <img src="/icons/phone.png">
+          </q-avatar>
+        </q-btn>
+
+        <q-toolbar-title>
+        </q-toolbar-title>
+
+        <div>
+          <q-btn unelevated rounded color="grey-4" text-color="black" no-caps label="Home"/>
+          <q-btn flat rounded color="black" no-caps label="Discover"/>
+          <q-btn flat rounded color="black" no-caps label="Register"/>
+          <q-btn flat round color="black" icon="search" />
+        </div>
+      </q-toolbar>
+    </q-header>
+    
+    <q-page-container>
+      <Home />
+    </q-page-container>
+  </q-layout>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Home from './views/Home.vue'
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'LayoutDefault',
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  components: {
+    Home
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
+  data () {
+    return {
     }
   }
 }
+</script>
+
+<style>
 </style>
